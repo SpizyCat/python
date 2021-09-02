@@ -11,8 +11,8 @@ attempts = 7
 
 os.system("clear")
 print("Welcome to my fruit guesser! You will have a certain number of attempts to guess the fruit!")
-for i in range(0):
-    print(7-i)
+for i in range(5):
+    print(5-i)
     time.sleep(1)
 
 def print_hangman(values):
