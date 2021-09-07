@@ -9,8 +9,14 @@ letters_guessed = []
 wrong_letters = []
 attempts = 7
 
-os.system("clear")
-print("Welcome to my fruit guesser! You will have a certain number of attempts to guess the fruit!")
+def clear():
+    if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
+
+clear()
+print("Welcome to hangman game! You will have a certain number of attempts to guess the fruit!")
 for i in range(5):
     print(5-i)
     time.sleep(1)
@@ -27,7 +33,7 @@ def print_hangman(values):
     print("  `````````````````````")
 
 while attempts != 0:
-    os.system("clear")
+    clear()
     progress = ""
     for letter in secret_word:
         if letter in letters_guessed:
@@ -54,11 +60,12 @@ while attempts != 0:
         
 
     if len(letters_guessed) == len(secret_word):
+        clear()
         print("Succes! You managed to guess the word, it was " + secret_word)
         break
 
 if attempts == 0:
-    os.system("clear")
+    clear()
     values[6] = ("#")
     print_hangman(values)
     print("You failed, the word was " + secret_word)
