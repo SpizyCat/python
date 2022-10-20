@@ -20,7 +20,7 @@ while True:
         print("You won, you chose", inp, "and the computer chose", computeranswer)
     else:
         print("Please input a valid choice.")
-    playagain = input("Play again y/n ")
+    playagain = input("Press enter to play again y/n ")
     if playagain == "n" or playagain == "no":
         break
 
